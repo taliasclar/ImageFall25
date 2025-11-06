@@ -8,15 +8,26 @@
 
 <body>
   <a-scene>
-    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    <a-plane position="0 0.1 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-    <!-- <a-sky color="#ECECEC"></a-sky> -->
-    <!-- the enviroment entity includes a sky. Choose from the presets"none, default, contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, threetowers, poison, arches, tron, japan, dream, volcano, starry, osiris, moon" -->
-    <a-sky src="/ImageLab09/Snowbackground.jpeg"></a-sky>
+    <!-- Bottom sphere (largest) -->
+    <a-sphere position="0 0.5 -5" radius="1" color="white"></a-sphere>
 
+    <!-- Middle sphere -->
+    <a-sphere position="0 2 -5" radius="0.75" color="white"></a-sphere>
+
+    <!-- Head sphere -->
+    <a-sphere position="0 3 -5" radius="0.5" color="white"></a-sphere>
+
+    <!-- Eyes -->
+    <a-sphere position="-0.15 3.15 -4.5" radius="0.05" color="black"></a-sphere>
+    <a-sphere position="0.15 3.15 -4.5" radius="0.05" color="black"></a-sphere>
+
+    <!-- Nose (carrot) -->
+    <a-cone position="0 3 -4.4" radius-bottom="0.05" radius-top="0" height="0.3" color="orange" rotation="90 0 0"></a-cone>
+
+    <!-- Background -->
+    <a-sky src="/ImageLab09/Snowbackground.jpeg"></a-sky>
   </a-scene>
 </body>
+
 
 </html>
