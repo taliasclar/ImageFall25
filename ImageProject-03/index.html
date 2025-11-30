@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <meta charset="utf-8">
+    <title>CandyLand</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <a-assets>
+        <a-asset-item id="model1" src="assets/lollipop.glb"></a-asset-item>
+        <a-asset-item id="model2" src="assets/sweets_pack.glb"></a-asset-item>
+        <img id="background" src="assets/Background.jpg">
+      </a-assets>
+
+      <!-- LOLLIPOP: ROTATION -->
+      <a-entity gltf-model="#model1"
+                position="-2 1.2 -4"
+                scale="1.5 1.5 1.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+      </a-entity>
+
+      <!-- SWEETS PACK: UP/DOWN BOB -->
+      <a-entity gltf-model="#model2"
+                position="2 1.2 -4"
+                scale="8 8 8"
+                animation="property: position; dir: alternate; to: 2 1.8 -4; loop: true; dur: 3000">
+      </a-entity>
+
+      <!-- SKY BACKGROUND -->
+      <a-sky src="#background" radius="30"></a-sky>
+
     </a-scene>
   </body>
 </html>
